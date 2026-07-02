@@ -1,49 +1,78 @@
+/* ==========================================================================
+   1. RESET & BASE STYLES
+   ========================================================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html {
   scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
+  background-color: #f8f9fa;
   color: #333;
-  background: #fff;
+  line-height: 1.6;
 }
 
-/* ================= NAVBAR ================= */
+section {
+  padding: 80px 10%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-align: center;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: #1a73e8;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==========================================================================
+   2. NAVIGATION BAR
+   ========================================================================== */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 80px;
-  background: #fff;
+  padding: 20px 10%;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  z-index: 1000;
 }
 
 nav .logo {
+  font-size: 1.5rem;
   color: #1a73e8;
-  font-size: 22px;
-  font-weight: 700;
 }
 
 nav ul {
   display: flex;
   list-style: none;
-  gap: 35px;
+  gap: 20px;
 }
 
 nav ul li a {
-  text-decoration: none;
-  color: #333;
   font-weight: 500;
-  font-size: 15px;
   transition: color 0.3s;
 }
 
@@ -51,220 +80,147 @@ nav ul li a:hover {
   color: #1a73e8;
 }
 
-/* ================= HERO ================= */
+/* ==========================================================================
+   3. HERO SECTION
+   ========================================================================== */
 .hero {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 80px 100px;
-  background: #f4f6ff;
-  min-height: 90vh;
-  gap: 50px;
+  gap: 40px;
 }
 
 .hero-text {
   flex: 1;
-  max-width: 550px;
 }
 
-.hero-text p:first-child {
-  font-size: 18px;
-  color: #555;
-  margin-bottom: 10px;
+.hero-text p {
+  font-size: 1.2rem;
+  color: #666;
 }
 
 .hero-text h1 {
-  font-size: 52px;
-  font-weight: 900;
-  color: #2c2c2c;
-  margin-bottom: 20px;
-  line-height: 1.2;
+  font-size: 3.5rem;
+  margin: 10px 0;
 }
 
-.hero-text h1 span {
-  color: #2c2c2c;
+#changing-text {
+  color: #1a73e8;
 }
 
-.hero-text p.description {
-  font-size: 16px;
-  color: #555;
-  line-height: 1.7;
-  margin-bottom: 30px;
-}
-
-.btn {
-  background: linear-gradient(135deg, #1a73e8, #00b4ff);
-  color: #fff;
-  border: none;
-  padding: 14px 32px;
-  font-size: 15px;
-  font-weight: 500;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 8px 20px rgba(26, 115, 232, 0.3);
-  font-family: 'Roboto', sans-serif;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 25px rgba(26, 115, 232, 0.4);
+.description {
+  margin-bottom: 25px;
 }
 
 .social-media {
   display: flex;
-  gap: 18px;
-  margin-top: 25px;
+  gap: 15px;
 }
 
 .sm-icon {
-  font-size: 26px;
+  font-size: 1.8rem;
   color: #333;
-  transition: color 0.3s, transform 0.3s;
-  text-decoration: none;
+  transition: transform 0.3s, color 0.3s;
 }
 
 .sm-icon:hover {
   color: #1a73e8;
-  transform: translateY(-2px);
+  transform: translateY(-5px);
 }
 
 .hero-img {
   flex: 1;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .hero-img img {
-  width: 380px;
-  height: 380px;
-  border-radius: 50%;
+  width: 320px;
+  height: 320px;
   object-fit: cover;
-  border: 10px solid #fff;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  border: 5px solid #fff;
 }
 
-/* ================= SECTIONS ================= */
-section {
-  padding: 80px 100px;
-}
-
-section h2 {
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 30px;
-  color: #2c2c2c;
-  text-align: center;
-}
-
-/* ================= ABOUT ================= */
-#about {
-  background: #fff;
-}
-
-.about-container {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.about-container h2 {
-  text-align: center;
-}
-
-.about-container p {
-  font-size: 16px;
-  line-height: 1.8;
-  color: #555;
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 40px;
-}
-
+/* ==========================================================================
+   4. ABOUT SECTION & SKILLS
+   ========================================================================== */
 .about-container h3 {
-  font-size: 22px;
-  margin-bottom: 20px;
-  text-align: center;
-  color: #2c2c2c;
+  margin: 30px 0 15px;
 }
 
 .skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 20px;
   list-style: none;
 }
 
 .skills-list li {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
-  padding: 12px 20px;
-  background: #f4f6ff;
-  border-radius: 10px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
   font-weight: 500;
-  color: #333;
+  font-size: 0.9rem;
 }
 
 .skill-img {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
 }
 
-/* ================= RESUME ================= */
-#resume {
-  background: #f4f6ff;
-}
-
-.resume-container {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.resume-container h2 {
-  text-align: center;
+/* ==========================================================================
+   5. RESUME SECTION
+   ========================================================================== */
+.resume-container h2:nth-of-type(2) {
+  margin-top: 40px;
 }
 
 .resume-list {
   list-style: none;
-  margin-bottom: 40px;
+  position: relative;
+  border-left: 2px solid #1a73e8;
+  padding-left: 20px;
+  margin-left: 10px;
 }
 
 .resume-list li {
-  background: #fff;
-  padding: 20px 25px;
-  margin-bottom: 15px;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-  line-height: 1.6;
+  position: relative;
+  margin-bottom: 25px;
 }
 
-.resume-list li strong {
-  color: #1a73e8;
-  font-size: 17px;
+.resume-list li::before {
+  content: '';
+  position: absolute;
+  left: -27px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  background: #1a73e8;
+  border-radius: 50%;
 }
 
-/* ================= PROJECTS ================= */
-#portofolio {
-  background: #fff;
-}
-
-.projects-container {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
+/* ==========================================================================
+   6. PORTFOLIO (GALLERY) SECTION
+   ========================================================================== */
 .project-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
 }
 
 .project-card {
   background: #fff;
-  border-radius: 15px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
   transition: transform 0.3s;
 }
 
@@ -278,16 +234,15 @@ section h2 {
   object-fit: cover;
 }
 
-.project-card h3 {
-  padding: 15px 20px 5px;
-  font-size: 18px;
-  color: #2c2c2c;
+.project-card h3, .project-card p {
+  padding: 0 20px;
+  margin-top: 10px;
 }
 
 .project-card p {
-  padding: 0 20px 15px;
   color: #666;
-  font-size: 14px;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
 }
 
 .project-tech {
@@ -300,171 +255,180 @@ section h2 {
 .project-tech span {
   background: #e8f0fe;
   color: #1a73e8;
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 12px;
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 4px;
   font-weight: 500;
 }
 
-/* ================= SERVICES ================= */
-#service {
-  background: #f4f6ff;
-}
-
+/* ==========================================================================
+   7. SERVICE SECTION
+   ========================================================================== */
 .service-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
-  max-width: 1100px;
-  margin: 0 auto;
 }
 
 .service-card {
   background: #fff;
-  padding: 35px 25px;
-  border-radius: 15px;
+  padding: 40px 30px;
+  border-radius: 10px;
   text-align: center;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-  transition: transform 0.3s;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .service-icon {
-  font-size: 40px;
+  font-size: 2.5rem;
   color: #1a73e8;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .service-card h3 {
-  font-size: 20px;
   margin-bottom: 10px;
-  color: #2c2c2c;
 }
 
-.service-card p {
-  color: #666;
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-/* ================= CONTACT ================= */
-#contact {
-  background: #fff;
-}
-
+/* ==========================================================================
+   8. CONTACT SECTION
+   ========================================================================== */
 .contact-form {
   max-width: 600px;
   margin: 0 auto 30px;
   display: flex;
   flex-direction: column;
   gap: 15px;
+  width: 100%;
 }
 
-.contact-form input,
-.contact-form textarea {
-  padding: 14px 18px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  font-size: 15px;
-  font-family: 'Roboto', sans-serif;
-  outline: none;
-  transition: border 0.3s;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: #1a73e8;
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
 }
 
 .contact-form textarea {
-  min-height: 120px;
+  height: 150px;
   resize: vertical;
 }
 
-.contact-form .btn {
-  align-self: flex-start;
+.btn {
+  background: #1a73e8;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #155cb4;
 }
 
 .contact-info {
   text-align: center;
-  color: #555;
-}
-
-.contact-info p {
-  margin-bottom: 10px;
 }
 
 .contact-info a {
   color: #1a73e8;
-  text-decoration: none;
 }
 
-/* ================= FOOTER ================= */
+/* ==========================================================================
+   9. FOOTER
+   ========================================================================== */
 footer {
-  background: #2c2c2c;
+  background: #222;
   color: #fff;
+  padding: 30px 10%;
   text-align: center;
-  padding: 25px 20px;
-}
-
-footer p {
-  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .footer-nav {
   display: flex;
   justify-content: center;
-  gap: 25px;
-}
-
-.footer-nav a {
-  color: #ccc;
-  text-decoration: none;
-  font-size: 14px;
-  transition: color 0.3s;
+  gap: 20px;
 }
 
 .footer-nav a:hover {
-  color: #fff;
+  color: #1a73e8;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ==========================================================================
+   10. MEDIA QUERIES (Kunci Responsif Android & Tablet)
+   ========================================================================== */
+
+/* Tablet & HP Besar */
 @media (max-width: 768px) {
+  section {
+    padding: 60px 5%;
+  }
+
   nav {
-    padding: 15px 20px;
     flex-direction: column;
     gap: 15px;
+    padding: 15px 5%;
   }
 
   nav ul {
-    gap: 15px;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 15px;
   }
 
   .hero {
-    flex-direction: column-reverse;
-    padding: 50px 20px;
+    flex-direction: column-reverse; /* Gambar pindah ke atas teks di HP */
     text-align: center;
   }
 
   .hero-text h1 {
-    font-size: 36px;
+    font-size: 2.5rem;
   }
 
   .hero-img img {
-    width: 250px;
-    height: 250px;
+    width: 240px;
+    height: 240px;
   }
 
   .social-media {
     justify-content: center;
   }
 
-  section {
-    padding: 60px 20px;
+  footer {
+    flex-direction: column;
   }
-                               }
+}
+
+/* HP Android Kecil */
+@media (max-width: 480px) {
+  h2 {
+    font-size: 2rem;
+  }
+
+  nav ul {
+    gap: 10px;
+    font-size: 0.9rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-img img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* Animasi untuk toast JavaScript bawaanmu */
+@keyframes slideIn {
+  from { transform: translateX(120%); }
+  to { transform: translateX(0); }
+}
